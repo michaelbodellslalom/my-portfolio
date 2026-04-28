@@ -246,13 +246,25 @@ section {
     background-color: var(--light-bg);
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-carousel {
+    overflow: hidden;
+    padding: 0 60px;
+}
+
+.projects-track {
+    display: flex;
+    transition: transform 0.5s ease;
     gap: 2rem;
 }
 
 .project-card {
+    flex: 0 0 calc(33.333% - 1.35rem);
     background: var(--white);
     border-radius: 10px;
     overflow: hidden;
@@ -265,9 +277,81 @@ section {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.carousel-btn-prev {
+    left: 0;
+}
+
+.carousel-btn-next {
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #cbd5e0;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.carousel-dot.active {
+    background: var(--primary-color);
+    width: 32px;
+    border-radius: 6px;
+}
+
 .project-image {
     height: 200px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    position: relative;
+}
+
+.industry-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-dark);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .project-content {
@@ -408,9 +492,18 @@ section {
         font-size: 2rem;
     }
 
-    .projects-grid,
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .project-card {
+        flex: 0 0 100%;
+    }
+
+    .projects-carousel {
+        padding: 0 50px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
 }
 
@@ -425,5 +518,14 @@ section {
 
     .container {
         padding: 0 15px;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .projects-carousel {
+        padding: 0 40px;
     }
 }
