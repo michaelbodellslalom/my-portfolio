@@ -244,6 +244,7 @@ section {
 /* Projects Section */
 .projects {
     background-color: var(--light-bg);
+    overflow: hidden;
 }
 
 .carousel-container {
@@ -254,7 +255,7 @@ section {
 
 .projects-carousel {
     overflow: hidden;
-    padding: 0 60px;
+    padding: 0 60px 1.5rem;
 }
 
 .projects-track {
@@ -337,6 +338,7 @@ section {
     height: 200px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     position: relative;
+    background-position: center 10px;
 }
 
 .industry-tag {
