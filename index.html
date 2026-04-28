@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio - Showcasing my projects and skills">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="nav-brand">Mike Bodell - Experience Designer</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="hero-title">Hello, I'm <span class="highlight">Mike Bodell</span></h1>
+            <p class="hero-subtitle">UX Designer, Researcher & Strategist</p>
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a UX Designer specializing in design, research, and strategy, with a focus on visual UI design for apps, websites, and tools. I'm deeply curious about human behavior, and I'm passionate about crafting end-to-end user experiences—from discovery through to living products and solutions. I thrive on translating complex challenges into intuitive, user-centered designs that drive real business impact.</p>
+                    <p>My experience spans consulting, experience design, and account management across diverse industries including e-commerce, telecommunications, finance, tech, public sector, commercial real estate, aerospace, and agriculture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Experience Design</span>
+                <span class="skill-tag">User Research</span>
+                <span class="skill-tag">Experience Strategy</span>
+                <span class="skill-tag">Visual Design</span>
+                <span class="skill-tag">User Centered Design</span>
+                <span class="skill-tag">Figma (5+ years' experience)</span>
+                <span class="skill-tag">Wireframes + High-Fidelity Prototypes</span>
+                <span class="skill-tag">Interface Design</span>
+                <span class="skill-tag">Web Design</span>
+                <span class="skill-tag">App Design</span>
+                <span class="skill-tag">Design Systems</span>
+                <span class="skill-tag">UX GPT</span>
+                <span class="skill-tag">Stitch AI Design</span>
+                <span class="skill-tag">Figma Make</span>
+                <span class="skill-tag">Claude Code</span>
+                <span class="skill-tag">Visual Studio Code</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">Developer Collaboration + Hand-off</span>
+                <span class="skill-tag">Agile Implementation</span>
+                <span class="skill-tag">Information Architecture</span>
+                <span class="skill-tag">Product Strategy</span>
+                <span class="skill-tag">Accessibility</span>
+                <span class="skill-tag">User Flows and Experience Mapping</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>E-Commerce Redesign</h3>
+                        <p>Led end-to-end UX research and redesign of checkout experience, increasing conversion rates by 32% through user testing and iterative design.</p>
+                        <div class="project-tags">
+                            <span class="tag">User Research</span>
+                            <span class="tag">Usability Testing</span>
+                            <span class="tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Mobile App Strategy</h3>
+                        <p>Conducted competitive analysis and user interviews to define product strategy for healthcare mobile app serving 100K+ users.</p>
+                        <div class="project-tags">
+                            <span class="tag">Strategy</span>
+                            <span class="tag">User Interviews</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>Design System</h3>
+                        <p>Created comprehensive design system and component library, reducing design-to-dev handoff time by 40% and ensuring consistency.</p>
+                        <div class="project-tags">
+                            <span class="tag">Design Systems</span>
+                            <span class="tag">Collaboration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div id="formMessage" class="form-message"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Mike Bodell. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
