@@ -82,6 +82,52 @@ body {
     color: var(--primary-color);
 }
 
+.nav-item-dropdown {
+    position: relative;
+}
+
+.nav-item-dropdown > .nav-link::after {
+    content: " ▾";
+    font-size: 0.9em;
+    margin-left: 0.25rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 220px;
+    list-style: none;
+    z-index: 1000;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition);
+    font-family: 'Raleway', sans-serif;
+}
+
+.dropdown-menu a:hover {
+    background: var(--light-bg);
+    color: var(--primary-color);
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -231,6 +277,10 @@ section {
     transition: var(--transition);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     border: 1px solid #e2e8f0;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
     cursor: default;
 }
 
@@ -271,11 +321,21 @@ section {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+.project-card h3,
+.project-card p,
+.project-card .tag {
+    text-decoration: none;
 }
 
 .carousel-btn {
@@ -443,7 +503,115 @@ section {
 .footer {
     background-color: var(--dark-bg);
     color: var(--white);
+   Project Detail Pages */
+.project-detail {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+}
+
+.project-header {
     text-align: center;
+    margin-bottom: 3rem;
+}
+
+.industry-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.project-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.project-intro {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.project-image-full {
+    margin: 3rem auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+}
+
+.project-image-full img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-content-detail {
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.project-content-detail h2 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+    color: var(--text-dark);
+}
+
+.project-content-detail p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.project-content-detail ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.project-content-detail li {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+}
+
+.project-content-detail li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.project-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem auto;
+    max-width: 800px;
+}
+
+.btn-secondary {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+}
+
+/*  text-align: center;
     padding: 2rem 0;
 }
 
@@ -506,6 +674,38 @@ section {
         width: 40px;
         height: 40px;
         font-size: 1.5rem;
+    }
+
+    .nav-item-dropdown {
+        position: relative;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        padding: 0.5rem 0 0.5rem 1rem;
+        background: transparent;
+    }
+
+    .nav-item-dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .nav-menu.active .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .project-navigation {
+        flex-direction: column;
+    }
+
+    .project-header h1 {
+        font-size: 2rem;
     }
 }
 
