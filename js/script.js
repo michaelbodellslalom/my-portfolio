@@ -69,34 +69,36 @@ if (skillsSection) {
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    // Basic validation
-    if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-        showMessage('Please fill in all fields', 'error');
-        return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        showMessage('Please enter a valid email address', 'error');
-        return;
-    }
-    
-    // Simulate form submission
-    // In a real application, you would send this data to a server
-    console.log('Form submitted:', { name, email, message });
-    
-    showMessage('Thank you for your message! I will get back to you soon.', 'success');
-    contactForm.reset();
-});
+if (contactForm && formMessage) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Basic validation
+        if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+            showMessage('Please fill in all fields', 'error');
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            showMessage('Please enter a valid email address', 'error');
+            return;
+        }
+
+        // Simulate form submission
+        // In a real application, you would send this data to a server
+        console.log('Form submitted:', { name, email, message });
+
+        showMessage('Thank you for your message! I will get back to you soon.', 'success');
+        contactForm.reset();
+    });
+}
 
 function showMessage(text, type) {
     formMessage.textContent = text;
@@ -168,8 +170,11 @@ function getCardsPerView() {
 let cardsPerView = getCardsPerView();
 let totalPages = Math.ceil(totalCards / cardsPerView);
 
+const hasCarousel = track && prevBtn && nextBtn && dotsContainer && totalCards > 0;
+
 // Create dots
 function createDots() {
+    if (!hasCarousel) return;
     dotsContainer.innerHTML = '';
     totalPages = Math.ceil(totalCards / cardsPerView);
     
@@ -186,6 +191,7 @@ createDots();
 const getDots = () => document.querySelectorAll('.carousel-dot');
 
 function updateCarousel() {
+    if (!hasCarousel) return;
     const cardWidth = cards[0].offsetWidth;
     const gap = 32; // 2rem gap
     const offset = -(currentIndex * cardsPerView * (cardWidth + gap));
@@ -207,29 +213,33 @@ function updateCarousel() {
 }
 
 function goToPage(pageIndex) {
+    if (!hasCarousel) return;
     currentIndex = Math.max(0, Math.min(pageIndex, totalPages - 1));
     updateCarousel();
 }
 
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-    }
-});
+if (hasCarousel) {
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
 
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < totalPages - 1) {
-        currentIndex++;
-        updateCarousel();
-    }
-});
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < totalPages - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+}
 
 // Handle window resize
 let resizeTimer;
 window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
+        if (!hasCarousel) return;
         const newCardsPerView = getCardsPerView();
         if (newCardsPerView !== cardsPerView) {
             cardsPerView = newCardsPerView;

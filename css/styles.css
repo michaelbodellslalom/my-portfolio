@@ -503,7 +503,11 @@ section {
 .footer {
     background-color: var(--dark-bg);
     color: var(--white);
-   Project Detail Pages */
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Project Detail Pages */
 .project-detail {
     padding: 120px 0 80px;
     min-height: 100vh;
@@ -574,24 +578,102 @@ section {
 }
 
 .project-content-detail ul {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
+    list-style: disc;
+    list-style-position: outside;
+    padding: 0 0 0 2rem;
+    margin: 1.5rem 0 1.75rem 2rem;
 }
 
 .project-content-detail li {
     font-size: 1.1rem;
     color: var(--text-light);
-    padding: 0.5rem 0 0.5rem 2rem;
-    position: relative;
+    padding: 0.45rem 0;
+    line-height: 1.7;
 }
 
 .project-content-detail li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
+    content: none;
+}
+
+.project-content-detail li::marker {
     color: var(--primary-color);
-    font-weight: bold;
+}
+
+.project-content-detail .project-list {
+    margin-left: 2.5rem;
+    padding-left: 1.25rem;
+}
+
+.okr-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.okr-card {
+    background: #ffffff;
+    border: 1px solid #dbe6ff;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 6px 18px rgba(30, 41, 59, 0.06);
+}
+
+.okr-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.okr-card p {
+    margin-bottom: 0.75rem;
+}
+
+.okr-card .project-list {
+    margin: 0.75rem 0 0 1rem;
+    padding-left: 1rem;
+}
+
+.prototype-section {
+    background: linear-gradient(135deg, #f0f4ff 0%, #eef2ff 100%);
+    border: 1px solid #c7d2fe;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.prototype-section .project-list {
+    margin: 0.75rem 0 0 1rem;
+    padding-left: 1rem;
+}
+
+.prototype-figure {
+    margin: 1rem 0 1.25rem;
+}
+
+.prototype-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 8px 20px rgba(30, 41, 59, 0.12);
+}
+
+.prototype-figure figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.prototype-callout {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    background: #ffffff;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    font-weight: 600;
+    color: #334155;
 }
 
 .project-navigation {
@@ -609,10 +691,6 @@ section {
 
 .btn-secondary:hover {
     background-color: #e2e8f0;
-}
-
-/*  text-align: center;
-    padding: 2rem 0;
 }
 
 /* Animations */
@@ -706,6 +784,10 @@ section {
 
     .project-header h1 {
         font-size: 2rem;
+    }
+
+    .okr-grid {
+        grid-template-columns: 1fr;
     }
 }
 
