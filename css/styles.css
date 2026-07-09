@@ -635,8 +635,8 @@ section {
 }
 
 .prototype-section {
-    background: linear-gradient(135deg, #fcf3ff 0%, #faf5ff 100%);
-    border: 1px solid #f0e8ff;
+    background: linear-gradient(135deg, #f0f4ff 0%, #eef2ff 100%);
+    border: 1px solid #c7d2fe;
     border-radius: 12px;
     padding: 1.25rem;
     margin: 1.5rem 0 2rem;
