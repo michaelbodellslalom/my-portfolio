@@ -509,8 +509,12 @@ section {
 
 /* Project Detail Pages */
 .project-detail {
-    padding: 120px 0 80px;
+    padding: 90px 0 80px;
     min-height: 100vh;
+}
+
+.project-detail .container {
+    margin-top: -45px !important;
 }
 
 .project-header {
